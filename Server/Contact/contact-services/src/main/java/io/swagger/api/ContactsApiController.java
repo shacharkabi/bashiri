@@ -4,6 +4,7 @@ import io.swagger.model.Contact;
 
 import com.bre.mapper.ContactMapper;
 import com.bre.services.ContactSevicesFactory;
+import com.bre.services.lib.SearchContact;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.annotations.*;
 import org.slf4j.Logger;
@@ -22,7 +23,9 @@ import javax.validation.constraints.*;
 import javax.validation.Valid;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2018-06-24T08:09:34.281Z")
 
 @Controller
@@ -49,12 +52,11 @@ public class ContactsApiController implements ContactsApi {
     public ResponseEntity<List<Contact>> searchContacts(@NotNull @ApiParam(value = "pass a contact Id for looking up a cotact", required = true) @Valid @RequestParam(value = "contactId", required = true) String contactId,@Min(0)@ApiParam(value = "number of records to skip for pagination") @Valid @RequestParam(value = "skip", required = false) Integer skip,@Min(0) @Max(50) @ApiParam(value = "maximum number of records to return") @Valid @RequestParam(value = "limit", required = false) Integer limit) {
         String accept = request.getHeader("Accept");
         if (accept != null && accept.contains("application/json")) {
-            try {
-                return new ResponseEntity<List<Contact>>(objectMapper.readValue("[ {  \"last_name\" : \"Doe\",  \"id\" : \"d290f1ee-6c54-4b01-90e6-d701748f0851\",  \"first_name\" : \"John\",  \"birthDate\" : \"2016-08-29T09:12:33.001Z\"}, {  \"last_name\" : \"Doe\",  \"id\" : \"d290f1ee-6c54-4b01-90e6-d701748f0851\",  \"first_name\" : \"John\",  \"birthDate\" : \"2016-08-29T09:12:33.001Z\"} ]", List.class), HttpStatus.NOT_IMPLEMENTED);
-            } catch (IOException e) {
-                log.error("Couldn't serialize response for content type application/json", e);
-                return new ResponseEntity<List<Contact>>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
+        	SearchContact searcContact = new SearchContact();
+        	searcContact.setId(UUID.fromString(contactId));
+			List<com.bre.services.lib.Contact> contactList = ContactSevicesFactory.getService().searchContact(searcContact);
+			//return new ResponseEntity<List<Contact>>(objectMapper.readValue("[ {  \"last_name\" : \"Doe\",  \"id\" : \"d290f1ee-6c54-4b01-90e6-d701748f0851\",  \"first_name\" : \"John\",  \"birthDate\" : \"2016-08-29T09:12:33.001Z\"}, {  \"last_name\" : \"Doe\",  \"id\" : \"d290f1ee-6c54-4b01-90e6-d701748f0851\",  \"first_name\" : \"John\",  \"birthDate\" : \"2016-08-29T09:12:33.001Z\"} ]", List.class), HttpStatus.OK);
+			return new ResponseEntity<List<Contact>>(ContactMapper.map(contactList) , HttpStatus.OK);
         }
 
         return new ResponseEntity<List<Contact>>(HttpStatus.NOT_IMPLEMENTED);

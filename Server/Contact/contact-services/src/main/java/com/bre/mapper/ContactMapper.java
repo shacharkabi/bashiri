@@ -1,7 +1,9 @@
 package com.bre.mapper;
 
+import java.util.List;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -20,8 +22,6 @@ public class ContactMapper {
 		return mappedContact;
 	}
 	
-
-
 	public static Contact  map(com.bre.services.lib.Contact contact){
 		Contact mappedContact = new Contact();
 		mappedContact.setId(contact.getId());
@@ -29,6 +29,14 @@ public class ContactMapper {
 		mappedContact.setLastName(contact.getLastName());
 		mappedContact.setBirthDate(calendarToString(contact.getBirthDate()));
 		return mappedContact;
+	}
+	
+	public static List<Contact>  map(List<com.bre.services.lib.Contact> contactList){
+		List<Contact> mappedList = new ArrayList<Contact>();
+		for(com.bre.services.lib.Contact con:contactList) {
+			mappedList.add(map(con));
+		}
+		return mappedList;
 	}
 	
 	private static Calendar stringToCalendar(String date) {

@@ -1,0 +1,37 @@
+Status: UNKNOWN
+Time Taken: 19
+Size: 134
+Timestamp: Sun Jul 01 17:57:58 IDT 2018
+TestStep: GetAddedContact
+
+----------------- Messages ------------------------------
+
+----------------- Properties ------------------------------
+HTTP Version: HTTP/1.1
+Endpoint: http://localhost:8980
+Method: GET
+StatusCode: 200
+URL: http://localhost:8980//skabi/ContactServices/1.0.0/contacts?contactId=d290f1ee-6c54-4b01-90e6-d701748f0852
+
+---------------- Request ---------------------------
+Accept: [application/json]
+Connection: [Keep-Alive]
+User-Agent: [Apache-HttpClient/4.1.1 (java 1.5)]
+Host: [localhost:8980]
+Accept-Encoding: [gzip,deflate]
+
+GET http://localhost:8980//skabi/ContactServices/1.0.0/contacts?contactId=d290f1ee-6c54-4b01-90e6-d701748f0852 HTTP/1.1
+Accept-Encoding: gzip,deflate
+Accept: application/json
+Host: localhost:8980
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.1.1 (java 1.5)
+
+
+---------------- Response --------------------------
+Transfer-Encoding: [chunked]
+#status#: [HTTP/1.1 200 ]
+Date: [Sun, 01 Jul 2018 14:57:57 GMT]
+Content-Type: [application/json;charset=UTF-8]
+
+[{"id":"d290f1ee-6c54-4b01-90e6-d701748f0852","first_name":"testFirst","last_name":"testLast","birthDate":"1987-03-10T12:55:31.045Z"}]

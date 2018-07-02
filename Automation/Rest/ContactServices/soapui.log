@@ -1,0 +1,21 @@
+2018-07-01 17:57:55,863 WARN  [SoapUI] Missing folder [C:\Users\skabi\bashiri-real-estate\Automation\Rest\ContactServices\.\ext] for external libraries
+2018-07-01 17:57:55,864 INFO  [DefaultSoapUICore] Creating new settings at [C:\Users\skabi\soapui-settings.xml]
+2018-07-01 17:57:56,799 WARN  [SoapUIProGroovyScriptEngineFactory] Missing scripts folder [C:\Users\skabi\bashiri-real-estate\Automation\Rest\ContactServices\scripts]
+2018-07-01 17:57:57,300 INFO  [WsdlProject] Loaded project from [file:/C:/Users/skabi/bashiri-real-estate/Automation/Rest/ContactServices/projects/contact-services-project.xml]
+2018-07-01 17:57:57,410 ERROR [TestAssertionRegistry] Missing assertion for type [JsonPath Count]
+2018-07-01 17:57:57,410 ERROR [TestAssertionRegistry] Missing assertion for type [JsonPath Count]
+2018-07-01 17:57:57,418 ERROR [TestAssertionRegistry] Missing assertion for type [JsonPath Count]
+2018-07-01 17:57:57,432 ERROR [TestAssertionRegistry] Missing assertion for type [JsonPath Count]
+2018-07-01 17:57:57,432 ERROR [TestAssertionRegistry] Missing assertion for type [JsonPath Count]
+2018-07-01 17:57:57,434 ERROR [TestAssertionRegistry] Missing assertion for type [JsonPath Count]
+2018-07-01 17:57:57,540 INFO  [SoapUIProTestCaseRunner] Running SoapUI tests in project [REST Project 1]
+2018-07-01 17:57:57,542 INFO  [SoapUIProTestCaseRunner] Running Project [REST Project 1], runType = SEQUENTIAL
+2018-07-01 17:57:57,564 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [GetDefaultContact]
+2018-07-01 17:57:57,585 INFO  [SoapUIProTestCaseRunner] running step [DefaultContact]
+2018-07-01 17:57:58,046 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [GetDefaultContact], time taken: 193ms, status: FINISHED
+2018-07-01 17:57:58,051 INFO  [SoapUIProTestCaseRunner] Running SoapUI testcase [AddContact]
+2018-07-01 17:57:58,051 INFO  [SoapUIProTestCaseRunner] running step [AddContact]
+2018-07-01 17:57:58,255 INFO  [SoapUIProTestCaseRunner] running step [GetAddedContact]
+2018-07-01 17:57:58,304 INFO  [SoapUIProTestCaseRunner] Finished running SoapUI testcase [AddContact], time taken: 31ms, status: FINISHED
+2018-07-01 17:57:58,305 INFO  [SoapUIProTestCaseRunner] Project [REST Project 1] finished with status [FINISHED] in 759ms
+2018-07-01 17:57:58,766 INFO  [SoapUIProTestCaseRunner] Created report at file:/C:/Users/skabi/bashiri-real-estate/Automation/Rest/ContactServices/target/reports/index.html
