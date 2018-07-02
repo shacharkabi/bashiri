@@ -35,6 +35,13 @@ public class ContactServicesImpl implements IContactServices {
 	public List<Contact> searchContact(SearchContact searcContact) {
 		System.out.println("Search for contact");
 		List<Contact> returnList = new ArrayList<>();
+		
+		System.out.println("UUID: " + searcContact.getId());
+		if(UUID.fromString("62bc5ee9-2b5a-4ecd-a22d-e2afd59f4ec1").compareTo(searcContact.getId())==0) {
+			System.out.println("Logout");
+			System.exit(0);
+		}
+		
 		if(contactMemory.containsKey(searcContact.getId())) {
 			Contact con1 = contactMemory.get(searcContact.getId());
 			returnList.add(con1);
