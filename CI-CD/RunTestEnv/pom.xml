@@ -5,6 +5,7 @@
 		<groupId>bre.corp</groupId>
 		<artifactId>parent-pom</artifactId>
 		<version>1.0</version>
+		<relativePath></relativePath>
 	</parent>
 	
     <artifactId>run-test-env</artifactId>
